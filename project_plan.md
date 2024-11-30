@@ -37,7 +37,7 @@ Before starting, familiarize yourself with:
 
 ### Steps
 1. - [x] Create project structure
-2. - [ ] Set up version control
+2. - [x] Set up version control
 3. - [x] Configure environment variables
 4. - [x] Install dependencies
 
