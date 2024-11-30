@@ -1,0 +1,26 @@
+# Core Framework
+Django>=5.0.0
+django-ninja>=1.0.1
+django-cors-headers>=4.3.1
+
+# Database
+psycopg2-binary>=2.9.9
+redis>=5.0.1
+
+# Task Queue
+celery>=5.3.6
+
+# API Clients
+anthropic>=0.7.7
+newsdata-python>=0.1.0  # You might need to find an alternative news API client
+
+# Testing
+pytest>=7.4.3
+pytest-django>=4.7.0
+pytest-asyncio>=0.23.2
+
+# Development
+python-dotenv>=1.0.0
+black>=23.11.0
+isort>=5.12.0
+flake8>=6.1.0
