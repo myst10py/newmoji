@@ -1,4 +1,26 @@
-# NewMoji Interactive Prototype
+# NewMoji Interactive Prototype v2.0
+
+## ✨ What's New in This Version
+
+**6 Complete, Realistic Stories** covering topics Gen Z cares about:
+- 🤖💼📉 AI replacing jobs (Tech layoffs vs AI expansion)
+- 🎓💸😰 Student loan forgiveness blocked
+- 🌍🔥🌊 Climate extreme weather worldwide
+- 📱⚖️🚫 Montana bans TikTok statewide
+- 🏠💸😰 Housing crisis: $2,000/month rent
+- 🤖📚🎓 Schools split on ChatGPT
+
+**Multiple Challenge Types:**
+- Bias detection (emotional language)
+- Loaded language identification
+- Fact vs opinion sorting
+- Source credibility evaluation
+- Framing analysis
+- Perspective identification
+
+**All stories are fully functional** with 4 levels of progressive disclosure, realistic multi-source perspectives, and educational challenges.
+
+---
 
 ## How to View the Prototype
 
@@ -31,43 +53,79 @@ This allows you to test on your phone by visiting your computer's IP address.
 
 ## What to Test
 
-### User Flow
+### Recommended Testing Order
+
+**Story 1: AI Jobs** (🤖💼📉)
+- Good first story - very relevant to Gen Z
+- Challenge: Identify emotional language
+- Tests basic bias detection
+
+**Story 2: Student Loans** (🎓💸😰)
+- Directly affects young people
+- Challenge: Multiple correct answers (checkboxes)
+- Tests loaded language identification
+
+**Story 3: TikTok Ban** (📱⚖️🚫)
+- Platform they actually use
+- Challenge: Source credibility evaluation
+- Tests understanding of expertise vs agenda
+
+**Story 4: Housing Crisis** (🏠💸😰)
+- Economic reality they're facing
+- Challenge: Framing analysis (all answers correct)
+- Tests understanding how same data = different narratives
+
+**Story 5: Climate Weather** (🌍🔥🌊)
+- Complex topic with strong opinions
+- Challenge: Fact vs opinion sorting
+- Tests distinguishing measurement from interpretation
+
+**Story 6: AI in Education** (🤖📚🎓)
+- Directly relevant to students
+- Challenge: Perspective identification
+- Tests recognizing viewpoint signaling
+
+### User Flow to Test
 1. **Home Screen**
-   - See the emoji headlines
+   - All 6 stories visible with emoji headlines
    - Notice the daily challenge
    - Check out your stats (streak, score)
 
-2. **Tap a Story**
-   - Try the Congress spending story
-   - Notice how content reveals progressively
-   - Tap "Continue" to see each level
+2. **Tap Any Story**
+   - Progressive disclosure works
+   - Tap "Continue" to reveal each level
+   - Notice different emoji for each story
 
-3. **Try the Challenge**
-   - In Level 3, answer the bias detection question
-   - See the educational feedback
+3. **Try Different Challenges**
+   - Some use radio buttons (single answer)
+   - Some use checkboxes (multiple answers)
+   - Different types of media literacy lessons
+
+4. **Complete Multiple Stories**
+   - Go back to home after finishing one
+   - Try 2-3 different stories
    - Watch your score increase
-
-4. **Complete the Story**
-   - Go all the way to Level 4
-   - See the completion screen
-   - Notice achievement celebration
+   - See "X / 6 stories completed"
 
 ### What's Working
+✅ 6 complete stories with realistic content
 ✅ Progressive disclosure (tap to reveal)
-✅ Interactive challenge with feedback
+✅ Multiple challenge types (bias, loaded language, source credibility, framing, fact/opinion)
+✅ Automatic grading with detailed feedback
 ✅ Points and score tracking
+✅ Stories completed counter (X/6)
 ✅ Achievement celebrations
 ✅ Responsive design (works on mobile)
 ✅ Beautiful visual design
 
-### What's Hardcoded
-- Only 3 stories available
-- Only 1 challenge works
-- No real data persistence
-- No actual API calls
-- Achievement badges don't fully work
+### What's Still Prototype
+- No real news API (content is hardcoded but realistic)
+- No backend / data persistence
+- Badges don't unlock features (just visual)
+- Related stories don't link (just show what would exist)
+- No actual user accounts
 
-**This is intentional!** We're testing the EXPERIENCE, not building the product yet.
+**This is intentional!** We're testing the EXPERIENCE and CONTENT, not building infrastructure yet.
 
 ---
 
