@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewMoji - News that doesn't suck</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Progress Bar (for user testing) -->
+    <div id="progressBar" class="progress-bar"></div>
+
+    <!-- Home Screen -->
+    <div id="homeScreen" class="screen active">
+        <header class="app-header">
+            <h1 class="logo">📱 NewMoji</h1>
+            <div class="user-stats">
+                <span id="streakDisplay">🔥 <span id="streakCount">0</span></span>
+                <span id="scoreDisplay">📊 <span id="scoreCount">0</span>/100</span>
+            </div>
+        </header>
+
+        <div class="tagline">
+            <h2>News that doesn't suck 🎯</h2>
+            <p class="subtitle">Tap any story to learn more</p>
+        </div>
+
+        <div class="daily-challenge">
+            <div class="challenge-header">
+                🎯 Today's Challenge
+            </div>
+            <div class="challenge-content">
+                <p><strong>Read beyond the headline</strong></p>
+                <p>Complete one full story today</p>
+                <div class="challenge-reward">Reward: +20 points 🏆</div>
+            </div>
+        </div>
+
+        <div class="stories-feed">
+            <div class="story-card" data-story="congress">
+                <div class="emoji-headline">🔥💰📊</div>
+                <div class="story-preview">Congress spending drama</div>
+                <div class="story-meta">2 min read • Politics</div>
+            </div>
+
+            <div class="story-card" data-story="ai">
+                <div class="emoji-headline">🤖💼📈</div>
+                <div class="story-preview">AI taking jobs debate</div>
+                <div class="story-meta">3 min read • Technology</div>
+            </div>
+
+            <div class="story-card" data-story="climate">
+                <div class="emoji-headline">🌍🌡️❄️</div>
+                <div class="story-preview">Climate weird weather</div>
+                <div class="story-meta">2 min read • Environment</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Story Screen -->
+    <div id="storyScreen" class="screen">
+        <header class="story-header">
+            <button class="back-button">← Back</button>
+            <button class="share-button">📤 Share</button>
+        </header>
+
+        <!-- Story Container -->
+        <div class="story-container">
+            <!-- Level 0: Emoji Headline (always visible) -->
+            <div class="story-level level-0">
+                <div class="emoji-headline-large" id="storyEmoji">🔥💰📊</div>
+            </div>
+
+            <!-- Level 1: Text Headline -->
+            <div class="story-level level-1" id="level1">
+                <h1 class="story-title" id="storyTitle">Congress passes $1.2 trillion spending bill</h1>
+
+                <div class="first-time-tooltip">
+                    💡 <strong>First time here?</strong><br>
+                    Tap below to reveal more info step-by-step
+                </div>
+
+                <button class="continue-button" data-next="level2">
+                    Tap to continue ↓
+                </button>
+
+                <div class="progress-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+
+            <!-- Level 2: The Summary -->
+            <div class="story-level level-2 hidden" id="level2">
+                <div class="level-divider"></div>
+
+                <h2 class="section-title">What Happened</h2>
+                <div class="summary-text" id="summaryText">
+                    <p>Congress passed a $1.2 trillion spending bill to keep the government funded through September 2024. The bill includes $60 billion for disaster relief and $20 billion for infrastructure projects, but cuts $15 billion from climate programs.</p>
+
+                    <p>The vote was 314-108 in the House and 68-29 in the Senate, with bipartisan support.</p>
+                </div>
+
+                <div class="teachable-moment">
+                    💡 <strong>Notice:</strong> We presented just facts without emotional language or interpretation. That comes next.
+                </div>
+
+                <button class="continue-button" data-next="level3">
+                    Tap to see how different sources covered this ↓
+                </button>
+
+                <div class="progress-dots">
+                    <span class="dot filled"></span>
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+
+            <!-- Level 3: The Perspectives -->
+            <div class="story-level level-3 hidden" id="level3">
+                <div class="level-divider"></div>
+
+                <h2 class="section-title">📊 How Different Sources Covered This</h2>
+
+                <div class="perspective-card left">
+                    <div class="perspective-label">LEFT-LEANING</div>
+                    <div class="perspective-content">
+                        <p class="source-name">CNN:</p>
+                        <p>"Hard-won spending deal includes victory for disaster aid"</p>
+                    </div>
+                </div>
+
+                <div class="perspective-card center">
+                    <div class="perspective-label">CENTER</div>
+                    <div class="perspective-content">
+                        <p class="source-name">AP News:</p>
+                        <p>"Congress approves $1.2T spending bill with bipartisan votes"</p>
+                    </div>
+                </div>
+
+                <div class="perspective-card right">
+                    <div class="perspective-label">RIGHT-LEANING</div>
+                    <div class="perspective-content">
+                        <p class="source-name">Fox News:</p>
+                        <p>"Spending bill passes despite concerns over federal debt"</p>
+                    </div>
+                </div>
+
+                <div class="challenge-box">
+                    <h3>🎯 Interactive Challenge</h3>
+                    <p class="challenge-question">Which headlines use emotional or loaded language?</p>
+
+                    <div class="challenge-options">
+                        <label class="challenge-option">
+                            <input type="checkbox" name="challenge" value="cnn">
+                            <span>CNN's "hard-won" and "victory"</span>
+                        </label>
+                        <label class="challenge-option">
+                            <input type="checkbox" name="challenge" value="ap">
+                            <span>AP's "approves" and "bipartisan"</span>
+                        </label>
+                        <label class="challenge-option">
+                            <input type="checkbox" name="challenge" value="fox">
+                            <span>Fox's "despite concerns"</span>
+                        </label>
+                    </div>
+
+                    <button class="submit-challenge-button" id="submitChallenge">Submit Answer</button>
+                </div>
+
+                <div class="challenge-result hidden" id="challengeResult">
+                    <!-- Will be filled by JavaScript -->
+                </div>
+
+                <div class="teachable-moment hidden" id="teachableAfterChallenge">
+                    💡 <strong>What to Notice:</strong>
+                    <ul>
+                        <li>Left sources frame it as a positive achievement</li>
+                        <li>Center sources stick to process language</li>
+                        <li>Right sources emphasize fiscal concerns</li>
+                    </ul>
+                    <p><strong>This is how bias works</strong> - not lying, but choosing what to highlight and what language to use.</p>
+                </div>
+
+                <button class="continue-button hidden" data-next="level4" id="continueToLevel4">
+                    Explore deeper ↓
+                </button>
+
+                <div class="progress-dots">
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+
+            <!-- Level 4: The Deep Dive -->
+            <div class="story-level level-4 hidden" id="level4">
+                <div class="level-divider"></div>
+
+                <h2 class="section-title">📚 Read the Original Articles</h2>
+
+                <div class="source-links">
+                    <div class="source-category">
+                        <h4>🔵 Left-leaning</h4>
+                        <a href="#" class="source-link">CNN full article →</a>
+                        <a href="#" class="source-link">MSNBC analysis →</a>
+                    </div>
+                    <div class="source-category">
+                        <h4>⚪ Center</h4>
+                        <a href="#" class="source-link">AP News wire story →</a>
+                        <a href="#" class="source-link">Reuters dispatch →</a>
+                    </div>
+                    <div class="source-category">
+                        <h4>🔴 Right-leaning</h4>
+                        <a href="#" class="source-link">Fox News coverage →</a>
+                        <a href="#" class="source-link">Wall Street Journal →</a>
+                    </div>
+                </div>
+
+                <div class="learning-modules">
+                    <h3>🎓 Learn More</h3>
+                    <div class="module-card">
+                        <div class="module-icon">📖</div>
+                        <div class="module-content">
+                            <h4>How does Congress pass spending bills?</h4>
+                            <p class="module-time">5 min interactive lesson</p>
+                        </div>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-icon">🎯</div>
+                        <div class="module-content">
+                            <h4>Understanding partisan media</h4>
+                            <p class="module-time">7 min module</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="related-stories">
+                    <h3>🔗 Related Stories</h3>
+                    <div class="related-card">
+                        <span class="related-emoji">📊💵🏛️</span>
+                        <span class="related-title">Federal budget basics</span>
+                    </div>
+                    <div class="related-card">
+                        <span class="related-emoji">🌍⚡💰</span>
+                        <span class="related-title">Climate spending debate</span>
+                    </div>
+                </div>
+
+                <button class="finish-button" id="finishStory">
+                    Finish Story
+                </button>
+
+                <div class="progress-dots">
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot active"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Completion Screen -->
+    <div id="completionScreen" class="screen">
+        <div class="completion-container">
+            <div class="celebration">🎉</div>
+            <h1>Nice work!</h1>
+
+            <div class="completion-stats">
+                <h3>You just:</h3>
+                <ul>
+                    <li>✅ Read beyond the headline</li>
+                    <li>✅ Saw multiple perspectives</li>
+                    <li>✅ Learned to spot bias</li>
+                </ul>
+            </div>
+
+            <div class="score-increase">
+                <h3>Your media literacy score:</h3>
+                <div class="score-display-large">
+                    <span class="score-number" id="finalScore">10</span>
+                    <span class="score-total">/ 100</span>
+                </div>
+                <p class="score-increase-text">+10 points! 📈</p>
+            </div>
+
+            <div class="streak-info">
+                <p>Come back tomorrow to keep your streak 🔥</p>
+            </div>
+
+            <div class="completion-actions">
+                <button class="primary-button" id="readAnotherButton">Read Another Story</button>
+                <button class="secondary-button" id="enableNotifs">Set up notifications</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
